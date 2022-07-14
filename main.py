@@ -22,3 +22,17 @@ while True:
 
 
 
+#Создайте функцию infinite(lst, tries), которая будет проходиться по элементам списка lst (целые числа) заданное количество раз (tries) циклически.
+#Один раз - один элемент списка.
+#После вывода последнего значения последовательности процедура начнется с самого начала.
+def infinite(lst, tries):
+    if len(lst) >= tries:
+        y = lst[:tries]
+        return y
+    elif len(lst) <= tries:
+        coun = tries//len(lst)
+        c = tries-len(lst)*coun
+        y = lst*coun + lst[:c]
+        return y
+print(infinite([1, 2, 9], 9))
+
